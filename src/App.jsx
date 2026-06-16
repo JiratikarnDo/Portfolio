@@ -5,6 +5,7 @@ import githubLogo from './assets/github.png';
 import finloveIcon from './assets/FINLOVE_ICON.png';
 import elasticsearch from './assets/elasticsearch.png'
 import opensearch from './assets/opensearch.png'
+import farm from './assets/farm.png'
 
 function App() {
   const skills = ["Python", "JavaScript", "Go", "TypeScript", "SQL", "SqlServer", "MongoDB", "PostgreSql", "Docker", "Git"];
@@ -13,44 +14,51 @@ function App() {
     {
       title: "Warehouse Management System (WMS)",
       tech: "Python (FastAPI)", 
-      desc: "Developed during internship. Solved stock tracking issues.",
+      desc: "Solved stock tracking issues.",
       icon: "📦" ,
       isNDA: true
     },
     {
       title: "MQA System", 
       tech: "Python (FastAPI)", 
-      desc: "The MQA project is a web-based system for managing university course registrations documents",
+      desc: "MQA is a web-based platform for managing documents related to university courses.",
       icon: "🎓" ,
       githubLink: "https://github.com/JiratikarnDo/Backend_MQA.git"
     },
     { 
       title: "Finlove", 
       tech: "Python (Flask), Node.js(JavaScript)", 
-      desc: "Optimized neighbor search for efficiency.",
+      desc: "Finlove is a web app suitable for people who want to find a make friends or someone to chat with.",
       icon: finloveIcon ,
       githubLink: "https://github.com/JiratikarnDo/Finlove_Project.git"
     },
     {
       title: "Kanban",
       tech: "Python (FastAPI)",
-      desc: "Designed for streamlined project management",
+      desc: "Designed for streamlined project management.",
       icon: "📋",
       githubLink: "https://github.com/JiratikarnDo/Kanban-fastapi"
     },
     {
       title: "Seach Engine",
       tech:"Elasticsearch , Python (Fastapi)",
-      desc:"Boosted search engine accuracy from 31% to 81% by migrating to Elasticsearch.",
+      desc:"Improve search engine accuracy from 31% to 81%.",
       icon: elasticsearch,
       isNDA: true
     },
     {
       title: "Log Management System",
       tech: "OpenSearch, Python (FastAPI)",
-      desc: "Built an end-to-end Log Management System from scratch using OpenSearch for centralized system monitoring.",
+      desc: "Developed a Log Management System from scratch using OpenSearch for system monitoring.",
       icon: opensearch,
       isNDA: true
+    },
+    {
+      title:"Iot (Smart Form)",
+      tech:"C++ , C",
+      desc:"IoT smart mushroom house designed for automated home farming.",
+      icon: farm,
+      githubLink:"https://github.com/JiratikarnDo/Auduino-ESP32-DHT22-Soil-Moisture-Blynk-Auto-Manaul-LineNotify-and-Save-in-Google-Sheet.git"
     }
   ];
 
@@ -58,7 +66,7 @@ function App() {
     <div className="app-container">
       {/* 1. Navigation Bar */}
       <nav className="navbar">
-        <div className="nav-logo">Dodo Portfolio</div>
+        <div className="nav-logo">Portfolio Dodo</div>
         <div className="nav-links">
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -71,11 +79,11 @@ function App() {
         <div className="hero-content-wrapper">
           <img src={profileImg} alt="Do Profile" className="profile-img" />
           <div className="hero-text">
-            <h1>Hello, I'm <span className="highlight">Do</span>.</h1>
-            <p className="hero-subtitle">Backend Developer | Creative Problem Solver</p>
+            <h1>Portfolio <span className="highlight">Dodo</span>.</h1>
+            <p className="hero-subtitle">Backend Developer</p>
             <div className="contact-btns">
               <a href="#projects" className="btn-primary">View My Work</a>
-              <a href="mailto:jiratikarn.pri@gmail.com" className="btn-secondary">Email Me</a>
+              <a href="mailto:jiratikarn.pri@gmail.com" className="btn-secondary">📧 Email Me</a>
             </div>
           </div>
         </div>
@@ -93,7 +101,7 @@ function App() {
 
       {/* 4. Projects Section */}
       <section id="projects" className="projects-section">
-        <h2>💻 Featured Projects</h2>
+        <h2>💻 Projects</h2>
         <div className="projects-grid">
           {projects.map((proj, index) => (
             <div key={index} className="project-card">
