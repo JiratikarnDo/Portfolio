@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import profileImg from './assets/profile.jpg';
 import githubLogo from './assets/github.png';
+import finloveIcon from './assets/FINLOVE_ICON.png';
+import elasticsearch from './assets/elasticsearch.png'
+import opensearch from './assets/opensearch.png'
 
 function App() {
-  const skills = ["Python", "JavaScript", "Go", "TypeScript", "SQL", "SqlServer", "MongoDB", "Git"];
+  const skills = ["Python", "JavaScript", "Go", "TypeScript", "SQL", "SqlServer", "MongoDB", "Docker", "Git"];
   
   const projects = [
     {
@@ -25,7 +28,7 @@ function App() {
       title: "Finlove", 
       tech: "Python (Flask), Node.js(JavaScript)", 
       desc: "Optimized neighbor search for efficiency.",
-      icon: "💘" ,
+      icon: finloveIcon ,
       githubLink: "https://github.com/JiratikarnDo/Finlove_Project.git"
     },
     {
@@ -34,6 +37,20 @@ function App() {
       desc: "Designed for streamlined project management",
       icon: "📋",
       githubLink: "https://github.com/JiratikarnDo/Kanban-fastapi"
+    },
+    {
+      title: "Seach Engine",
+      tech:"Elasticsearch , Python (Fastapi)",
+      desc:"Boosted search engine accuracy from 31% to 81% by migrating to Elasticsearch.",
+      icon: elasticsearch,
+      isNDA: true
+    },
+    {
+      title: "Log Management System",
+      tech: "OpenSearch, Python (FastAPI)",
+      desc: "Built an end-to-end Log Management System from scratch using OpenSearch for centralized system monitoring.",
+      icon: opensearch,
+      isNDA: true
     }
   ];
 
@@ -58,7 +75,7 @@ function App() {
             <p className="hero-subtitle">Backend Developer | Creative Problem Solver</p>
             <div className="contact-btns">
               <a href="#projects" className="btn-primary">View My Work</a>
-              <a href="mailto:your.email@example.com" className="btn-secondary">Email Me</a>
+              <a href="mailto:jiratikarn.pri@gmail.com" className="btn-secondary">Email Me</a>
             </div>
           </div>
         </div>
@@ -80,7 +97,13 @@ function App() {
         <div className="projects-grid">
           {projects.map((proj, index) => (
             <div key={index} className="project-card">
-              <div className="card-icon">{proj.icon}</div>
+              <div className="card-icon">
+                {typeof proj.icon === 'string' && !proj.icon.includes('/') ? (
+                  proj.icon
+                ) : (
+                  <img src={proj.icon} alt={proj.title} style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                )}
+              </div>
               <h3>{proj.title}</h3>
               <p className="proj-tech"><strong>Tech:</strong> {proj.tech}</p>
               <p className="proj-desc">{proj.desc}</p>
@@ -110,7 +133,7 @@ function App() {
             <span className="phone-number">095-767-6122</span>
           </div>
 
-          <a href="mailto:your.email@example.com" className="btn-primary">📧 Email Me</a>
+          <a href="mailto:jiratikarn.pri@gmail.com" className="btn-primary">📧 Email Me</a>
           
           <a href="https://github.com/JiratikarnDo" target="_blank" rel="noreferrer" className="btn-secondary btn-with-icon">
             <img src={githubLogo} alt="GitHub Logo" className="btn-icon" />
