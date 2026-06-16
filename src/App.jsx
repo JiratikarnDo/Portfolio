@@ -7,7 +7,7 @@ import elasticsearch from './assets/elasticsearch.png'
 import opensearch from './assets/opensearch.png'
 
 function App() {
-  const skills = ["Python", "JavaScript", "Go", "TypeScript", "SQL", "SqlServer", "MongoDB", "Docker", "Git"];
+  const skills = ["Python", "JavaScript", "Go", "TypeScript", "SQL", "SqlServer", "MongoDB", "PostgreSql", "Docker", "Git"];
   
   const projects = [
     {
